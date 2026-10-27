@@ -1,0 +1,11 @@
+Subject: built a hiring handoff
+
+Hi,
+
+Openroll’s cross-system headcount workflows got me thinking about one hire appearing in both the ATS and HRIS, sometimes with different start dates. I built a handoff workbench that reconciles those records, previews the cost impact, and explains the resulting variance to plan with source-linked decisions.
+
+https://github.com/elprofessor-15/openroll-hiring-handoff
+
+I’m Abhineeth, a fourth-year IIT BHU undergraduate seeking a paid remote internship. Would this be useful to your People and Finance workflows?
+
+Resume: https://drive.google.com/file/d/1PWgVhgMRo2GYhCZ7ezYSrYAAMGfb489Q/view?usp=sharing

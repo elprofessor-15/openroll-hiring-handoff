@@ -1,0 +1,716 @@
+{
+  "schema": "openroll-hiring-handoff.v1",
+  "workspace": "Northstar Labs",
+  "asOf": "2026-10-28",
+  "currency": "USD",
+  "createdAt": "2026-10-27T19:11:44.950Z",
+  "assumptions": {
+    "loadBps": 2000,
+    "annualDivisor": 12,
+    "proration": "Calendar days, inclusive start date; rounded per line in integer cents.",
+    "scope": "Synthetic hiring cohort only. Employer load is a planning assumption, not a tax rate."
+  },
+  "sources": {
+    "asOf": "2026-10-28",
+    "workspace": "Northstar Labs",
+    "currency": "USD",
+    "plan": [
+      {
+        "id": "POS-101",
+        "title": "Backend engineer",
+        "team": "Engineering",
+        "annualCents": 12000000,
+        "start": "2026-11-02",
+        "fteBps": 10000,
+        "state": "approved"
+      },
+      {
+        "id": "POS-102",
+        "title": "Product engineer",
+        "team": "Engineering",
+        "annualCents": 14400000,
+        "start": "2026-11-16",
+        "fteBps": 10000,
+        "state": "approved"
+      },
+      {
+        "id": "POS-103",
+        "title": "Support lead",
+        "team": "Customer experience",
+        "annualCents": 9600000,
+        "start": "2026-11-01",
+        "fteBps": 10000,
+        "state": "frozen"
+      },
+      {
+        "id": "POS-104",
+        "title": "Product designer",
+        "team": "Design",
+        "annualCents": 10800000,
+        "start": "2026-11-01",
+        "fteBps": 10000,
+        "state": "approved"
+      },
+      {
+        "id": "POS-105",
+        "title": "Account executive",
+        "team": "Sales",
+        "annualCents": 13200000,
+        "start": "2026-11-01",
+        "fteBps": 10000,
+        "state": "approved"
+      },
+      {
+        "id": "POS-106",
+        "title": "Platform engineer",
+        "team": "Engineering",
+        "annualCents": 15600000,
+        "start": "2026-12-01",
+        "fteBps": 10000,
+        "state": "approved"
+      }
+    ],
+    "ats": [
+      {
+        "id": "ATS-401",
+        "positionId": "POS-101",
+        "personKey": "SYN-01",
+        "title": "Backend engineer",
+        "annualCents": 12000000,
+        "start": "2026-11-02",
+        "fteBps": 10000,
+        "status": "accepted",
+        "updated": "2026-10-24"
+      },
+      {
+        "id": "ATS-402",
+        "positionId": "POS-102",
+        "personKey": "SYN-02",
+        "title": "Product engineer",
+        "annualCents": 14400000,
+        "start": "2026-11-16",
+        "fteBps": 10000,
+        "status": "accepted",
+        "updated": "2026-10-26"
+      },
+      {
+        "id": "ATS-403",
+        "positionId": "POS-103",
+        "personKey": "SYN-03",
+        "title": "Support lead",
+        "annualCents": 9600000,
+        "start": "2026-11-01",
+        "fteBps": 10000,
+        "status": "accepted",
+        "updated": "2026-10-25"
+      },
+      {
+        "id": "ATS-404",
+        "positionId": "POS-999",
+        "personKey": "SYN-04",
+        "title": "Product designer",
+        "annualCents": 10800000,
+        "start": "2026-11-09",
+        "fteBps": 10000,
+        "status": "accepted",
+        "updated": "2026-10-27"
+      },
+      {
+        "id": "ATS-405",
+        "positionId": "POS-105",
+        "personKey": "SYN-05",
+        "title": "Account executive",
+        "annualCents": 13200000,
+        "start": "2026-11-01",
+        "fteBps": 10000,
+        "status": "accepted",
+        "updated": "2026-10-25"
+      }
+    ],
+    "hris": [
+      {
+        "id": "HRIS-201",
+        "positionId": "POS-101",
+        "personKey": "SYN-01",
+        "title": "Backend engineer",
+        "annualCents": 12000000,
+        "start": "2026-10-12",
+        "fteBps": 10000,
+        "status": "active",
+        "updated": "2026-10-27"
+      },
+      {
+        "id": "HRIS-202",
+        "positionId": "POS-102",
+        "personKey": "SYN-02",
+        "title": "Product engineer",
+        "annualCents": 14400000,
+        "start": "2026-12-01",
+        "fteBps": 10000,
+        "status": "preboarding",
+        "updated": "2026-10-28"
+      }
+    ]
+  },
+  "decisions": [
+    {
+      "issue": {
+        "id": "join:POS-101",
+        "type": "Already joined",
+        "title": "One hire appears in two systems",
+        "positionId": "POS-101",
+        "sourceIds": [
+          "ATS-401",
+          "HRIS-201"
+        ],
+        "defaultChoice": "HRIS-201",
+        "options": [
+          {
+            "value": "HRIS-201",
+            "label": "Use HRIS · 2026-10-12",
+            "ref": "HRIS-201"
+          },
+          {
+            "value": "ATS-401",
+            "label": "Use ATS · 2026-11-02",
+            "ref": "ATS-401"
+          }
+        ],
+        "explanation": "The synthetic person key and position ID link an accepted offer to a joined employee. Carry one cost line, with a recorded source choice."
+      },
+      "record": {
+        "choice": "HRIS-201",
+        "owner": "Example reviewer",
+        "note": "Checked the explicit source references, start dates, and approved position for this synthetic close.",
+        "fingerprint": "{\"asOf\":\"2026-10-28\",\"workspace\":\"Northstar Labs\",\"currency\":\"USD\",\"plan\":[{\"id\":\"POS-101\",\"title\":\"Backend engineer\",\"team\":\"Engineering\",\"annualCents\":12000000,\"start\":\"2026-11-02\",\"fteBps\":10000,\"state\":\"approved\"},{\"id\":\"POS-102\",\"title\":\"Product engineer\",\"team\":\"Engineering\",\"annualCents\":14400000,\"start\":\"2026-11-16\",\"fteBps\":10000,\"state\":\"approved\"},{\"id\":\"POS-103\",\"title\":\"Support lead\",\"team\":\"Customer experience\",\"annualCents\":9600000,\"start\":\"2026-11-01\",\"fteBps\":10000,\"state\":\"frozen\"},{\"id\":\"POS-104\",\"title\":\"Product designer\",\"team\":\"Design\",\"annualCents\":10800000,\"start\":\"2026-11-01\",\"fteBps\":10000,\"state\":\"approved\"},{\"id\":\"POS-105\",\"title\":\"Account executive\",\"team\":\"Sales\",\"annualCents\":13200000,\"start\":\"2026-11-01\",\"fteBps\":10000,\"state\":\"approved\"},{\"id\":\"POS-106\",\"title\":\"Platform engineer\",\"team\":\"Engineering\",\"annualCents\":15600000,\"start\":\"2026-12-01\",\"fteBps\":10000,\"state\":\"approved\"}],\"ats\":[{\"id\":\"ATS-401\",\"positionId\":\"POS-101\",\"personKey\":\"SYN-01\",\"title\":\"Backend engineer\",\"annualCents\":12000000,\"start\":\"2026-11-02\",\"fteBps\":10000,\"status\":\"accepted\",\"updated\":\"2026-10-24\"},{\"id\":\"ATS-402\",\"positionId\":\"POS-102\",\"personKey\":\"SYN-02\",\"title\":\"Product engineer\",\"annualCents\":14400000,\"start\":\"2026-11-16\",\"fteBps\":10000,\"status\":\"accepted\",\"updated\":\"2026-10-26\"},{\"id\":\"ATS-403\",\"positionId\":\"POS-103\",\"personKey\":\"SYN-03\",\"title\":\"Support lead\",\"annualCents\":9600000,\"start\":\"2026-11-01\",\"fteBps\":10000,\"status\":\"accepted\",\"updated\":\"2026-10-25\"},{\"id\":\"ATS-404\",\"positionId\":\"POS-999\",\"personKey\":\"SYN-04\",\"title\":\"Product designer\",\"annualCents\":10800000,\"start\":\"2026-11-09\",\"fteBps\":10000,\"status\":\"accepted\",\"updated\":\"2026-10-27\"},{\"id\":\"ATS-405\",\"positionId\":\"POS-105\",\"personKey\":\"SYN-05\",\"title\":\"Account executive\",\"annualCents\":13200000,\"start\":\"2026-11-01\",\"fteBps\":10000,\"status\":\"accepted\",\"updated\":\"2026-10-25\"}],\"hris\":[{\"id\":\"HRIS-201\",\"positionId\":\"POS-101\",\"personKey\":\"SYN-01\",\"title\":\"Backend engineer\",\"annualCents\":12000000,\"start\":\"2026-10-12\",\"fteBps\":10000,\"status\":\"active\",\"updated\":\"2026-10-27\"},{\"id\":\"HRIS-202\",\"positionId\":\"POS-102\",\"personKey\":\"SYN-02\",\"title\":\"Product engineer\",\"annualCents\":14400000,\"start\":\"2026-12-01\",\"fteBps\":10000,\"status\":\"preboarding\",\"updated\":\"2026-10-28\"}]}",
+        "recordedAt": "2026-10-27T19:11:44.941Z"
+      }
+    },
+    {
+      "issue": {
+        "id": "join:POS-102",
+        "type": "Start-date conflict",
+        "title": "ATS and HRIS disagree on the start date",
+        "positionId": "POS-102",
+        "sourceIds": [
+          "ATS-402",
+          "HRIS-202"
+        ],
+        "defaultChoice": "HRIS-202",
+        "options": [
+          {
+            "value": "HRIS-202",
+            "label": "Use HRIS · 2026-12-01",
+            "ref": "HRIS-202"
+          },
+          {
+            "value": "ATS-402",
+            "label": "Use ATS · 2026-11-16",
+            "ref": "ATS-402"
+          }
+        ],
+        "explanation": "Two records for the same synthetic person and position contain different effective dates. Choose the source for this forecast without editing either system."
+      },
+      "record": {
+        "choice": "ATS-402",
+        "owner": "Example reviewer",
+        "note": "Checked the explicit source references, start dates, and approved position for this synthetic close.",
+        "fingerprint": "{\"asOf\":\"2026-10-28\",\"workspace\":\"Northstar Labs\",\"currency\":\"USD\",\"plan\":[{\"id\":\"POS-101\",\"title\":\"Backend engineer\",\"team\":\"Engineering\",\"annualCents\":12000000,\"start\":\"2026-11-02\",\"fteBps\":10000,\"state\":\"approved\"},{\"id\":\"POS-102\",\"title\":\"Product engineer\",\"team\":\"Engineering\",\"annualCents\":14400000,\"start\":\"2026-11-16\",\"fteBps\":10000,\"state\":\"approved\"},{\"id\":\"POS-103\",\"title\":\"Support lead\",\"team\":\"Customer experience\",\"annualCents\":9600000,\"start\":\"2026-11-01\",\"fteBps\":10000,\"state\":\"frozen\"},{\"id\":\"POS-104\",\"title\":\"Product designer\",\"team\":\"Design\",\"annualCents\":10800000,\"start\":\"2026-11-01\",\"fteBps\":10000,\"state\":\"approved\"},{\"id\":\"POS-105\",\"title\":\"Account executive\",\"team\":\"Sales\",\"annualCents\":13200000,\"start\":\"2026-11-01\",\"fteBps\":10000,\"state\":\"approved\"},{\"id\":\"POS-106\",\"title\":\"Platform engineer\",\"team\":\"Engineering\",\"annualCents\":15600000,\"start\":\"2026-12-01\",\"fteBps\":10000,\"state\":\"approved\"}],\"ats\":[{\"id\":\"ATS-401\",\"positionId\":\"POS-101\",\"personKey\":\"SYN-01\",\"title\":\"Backend engineer\",\"annualCents\":12000000,\"start\":\"2026-11-02\",\"fteBps\":10000,\"status\":\"accepted\",\"updated\":\"2026-10-24\"},{\"id\":\"ATS-402\",\"positionId\":\"POS-102\",\"personKey\":\"SYN-02\",\"title\":\"Product engineer\",\"annualCents\":14400000,\"start\":\"2026-11-16\",\"fteBps\":10000,\"status\":\"accepted\",\"updated\":\"2026-10-26\"},{\"id\":\"ATS-403\",\"positionId\":\"POS-103\",\"personKey\":\"SYN-03\",\"title\":\"Support lead\",\"annualCents\":9600000,\"start\":\"2026-11-01\",\"fteBps\":10000,\"status\":\"accepted\",\"updated\":\"2026-10-25\"},{\"id\":\"ATS-404\",\"positionId\":\"POS-999\",\"personKey\":\"SYN-04\",\"title\":\"Product designer\",\"annualCents\":10800000,\"start\":\"2026-11-09\",\"fteBps\":10000,\"status\":\"accepted\",\"updated\":\"2026-10-27\"},{\"id\":\"ATS-405\",\"positionId\":\"POS-105\",\"personKey\":\"SYN-05\",\"title\":\"Account executive\",\"annualCents\":13200000,\"start\":\"2026-11-01\",\"fteBps\":10000,\"status\":\"accepted\",\"updated\":\"2026-10-25\"}],\"hris\":[{\"id\":\"HRIS-201\",\"positionId\":\"POS-101\",\"personKey\":\"SYN-01\",\"title\":\"Backend engineer\",\"annualCents\":12000000,\"start\":\"2026-10-12\",\"fteBps\":10000,\"status\":\"active\",\"updated\":\"2026-10-27\"},{\"id\":\"HRIS-202\",\"positionId\":\"POS-102\",\"personKey\":\"SYN-02\",\"title\":\"Product engineer\",\"annualCents\":14400000,\"start\":\"2026-12-01\",\"fteBps\":10000,\"status\":\"preboarding\",\"updated\":\"2026-10-28\"}]}",
+        "recordedAt": "2026-10-27T19:11:44.949Z"
+      }
+    },
+    {
+      "issue": {
+        "id": "freeze:POS-103",
+        "type": "Frozen position",
+        "title": "A live record points to a frozen position",
+        "positionId": "POS-103",
+        "sourceIds": [
+          "POS-103",
+          "ATS-403"
+        ],
+        "defaultChoice": "exclude",
+        "options": [
+          {
+            "value": "exclude",
+            "label": "Keep excluded from this close",
+            "ref": "POS-103"
+          }
+        ],
+        "explanation": "The plan is frozen while another system still carries the position. Exclude it from the proposed close and record the discrepancy. No source record is changed."
+      },
+      "record": {
+        "choice": "exclude",
+        "owner": "Example reviewer",
+        "note": "Checked the explicit source references, start dates, and approved position for this synthetic close.",
+        "fingerprint": "{\"asOf\":\"2026-10-28\",\"workspace\":\"Northstar Labs\",\"currency\":\"USD\",\"plan\":[{\"id\":\"POS-101\",\"title\":\"Backend engineer\",\"team\":\"Engineering\",\"annualCents\":12000000,\"start\":\"2026-11-02\",\"fteBps\":10000,\"state\":\"approved\"},{\"id\":\"POS-102\",\"title\":\"Product engineer\",\"team\":\"Engineering\",\"annualCents\":14400000,\"start\":\"2026-11-16\",\"fteBps\":10000,\"state\":\"approved\"},{\"id\":\"POS-103\",\"title\":\"Support lead\",\"team\":\"Customer experience\",\"annualCents\":9600000,\"start\":\"2026-11-01\",\"fteBps\":10000,\"state\":\"frozen\"},{\"id\":\"POS-104\",\"title\":\"Product designer\",\"team\":\"Design\",\"annualCents\":10800000,\"start\":\"2026-11-01\",\"fteBps\":10000,\"state\":\"approved\"},{\"id\":\"POS-105\",\"title\":\"Account executive\",\"team\":\"Sales\",\"annualCents\":13200000,\"start\":\"2026-11-01\",\"fteBps\":10000,\"state\":\"approved\"},{\"id\":\"POS-106\",\"title\":\"Platform engineer\",\"team\":\"Engineering\",\"annualCents\":15600000,\"start\":\"2026-12-01\",\"fteBps\":10000,\"state\":\"approved\"}],\"ats\":[{\"id\":\"ATS-401\",\"positionId\":\"POS-101\",\"personKey\":\"SYN-01\",\"title\":\"Backend engineer\",\"annualCents\":12000000,\"start\":\"2026-11-02\",\"fteBps\":10000,\"status\":\"accepted\",\"updated\":\"2026-10-24\"},{\"id\":\"ATS-402\",\"positionId\":\"POS-102\",\"personKey\":\"SYN-02\",\"title\":\"Product engineer\",\"annualCents\":14400000,\"start\":\"2026-11-16\",\"fteBps\":10000,\"status\":\"accepted\",\"updated\":\"2026-10-26\"},{\"id\":\"ATS-403\",\"positionId\":\"POS-103\",\"personKey\":\"SYN-03\",\"title\":\"Support lead\",\"annualCents\":9600000,\"start\":\"2026-11-01\",\"fteBps\":10000,\"status\":\"accepted\",\"updated\":\"2026-10-25\"},{\"id\":\"ATS-404\",\"positionId\":\"POS-999\",\"personKey\":\"SYN-04\",\"title\":\"Product designer\",\"annualCents\":10800000,\"start\":\"2026-11-09\",\"fteBps\":10000,\"status\":\"accepted\",\"updated\":\"2026-10-27\"},{\"id\":\"ATS-405\",\"positionId\":\"POS-105\",\"personKey\":\"SYN-05\",\"title\":\"Account executive\",\"annualCents\":13200000,\"start\":\"2026-11-01\",\"fteBps\":10000,\"status\":\"accepted\",\"updated\":\"2026-10-25\"}],\"hris\":[{\"id\":\"HRIS-201\",\"positionId\":\"POS-101\",\"personKey\":\"SYN-01\",\"title\":\"Backend engineer\",\"annualCents\":12000000,\"start\":\"2026-10-12\",\"fteBps\":10000,\"status\":\"active\",\"updated\":\"2026-10-27\"},{\"id\":\"HRIS-202\",\"positionId\":\"POS-102\",\"personKey\":\"SYN-02\",\"title\":\"Product engineer\",\"annualCents\":14400000,\"start\":\"2026-12-01\",\"fteBps\":10000,\"status\":\"preboarding\",\"updated\":\"2026-10-28\"}]}",
+        "recordedAt": "2026-10-27T19:11:44.949Z"
+      }
+    },
+    {
+      "issue": {
+        "id": "unmapped:ATS-404",
+        "type": "Unmapped offer",
+        "title": "An accepted offer has no approved position link",
+        "positionId": null,
+        "sourceIds": [
+          "ATS-404"
+        ],
+        "defaultChoice": "exclude",
+        "options": [
+          {
+            "value": "exclude",
+            "label": "Leave unassigned and exclude the offer",
+            "ref": "ATS-404"
+          },
+          {
+            "value": "POS-104",
+            "label": "Link to POS-104 · Product designer",
+            "ref": "POS-104"
+          },
+          {
+            "value": "POS-106",
+            "label": "Link to POS-106 · Platform engineer",
+            "ref": "POS-106"
+          }
+        ],
+        "explanation": "The offer points outside the approved plan. A matching role title is not proof of identity. Choose a plan position explicitly or leave the offer unassigned."
+      },
+      "record": {
+        "choice": "POS-104",
+        "owner": "Example reviewer",
+        "note": "Checked the explicit source references, start dates, and approved position for this synthetic close.",
+        "fingerprint": "{\"asOf\":\"2026-10-28\",\"workspace\":\"Northstar Labs\",\"currency\":\"USD\",\"plan\":[{\"id\":\"POS-101\",\"title\":\"Backend engineer\",\"team\":\"Engineering\",\"annualCents\":12000000,\"start\":\"2026-11-02\",\"fteBps\":10000,\"state\":\"approved\"},{\"id\":\"POS-102\",\"title\":\"Product engineer\",\"team\":\"Engineering\",\"annualCents\":14400000,\"start\":\"2026-11-16\",\"fteBps\":10000,\"state\":\"approved\"},{\"id\":\"POS-103\",\"title\":\"Support lead\",\"team\":\"Customer experience\",\"annualCents\":9600000,\"start\":\"2026-11-01\",\"fteBps\":10000,\"state\":\"frozen\"},{\"id\":\"POS-104\",\"title\":\"Product designer\",\"team\":\"Design\",\"annualCents\":10800000,\"start\":\"2026-11-01\",\"fteBps\":10000,\"state\":\"approved\"},{\"id\":\"POS-105\",\"title\":\"Account executive\",\"team\":\"Sales\",\"annualCents\":13200000,\"start\":\"2026-11-01\",\"fteBps\":10000,\"state\":\"approved\"},{\"id\":\"POS-106\",\"title\":\"Platform engineer\",\"team\":\"Engineering\",\"annualCents\":15600000,\"start\":\"2026-12-01\",\"fteBps\":10000,\"state\":\"approved\"}],\"ats\":[{\"id\":\"ATS-401\",\"positionId\":\"POS-101\",\"personKey\":\"SYN-01\",\"title\":\"Backend engineer\",\"annualCents\":12000000,\"start\":\"2026-11-02\",\"fteBps\":10000,\"status\":\"accepted\",\"updated\":\"2026-10-24\"},{\"id\":\"ATS-402\",\"positionId\":\"POS-102\",\"personKey\":\"SYN-02\",\"title\":\"Product engineer\",\"annualCents\":14400000,\"start\":\"2026-11-16\",\"fteBps\":10000,\"status\":\"accepted\",\"updated\":\"2026-10-26\"},{\"id\":\"ATS-403\",\"positionId\":\"POS-103\",\"personKey\":\"SYN-03\",\"title\":\"Support lead\",\"annualCents\":9600000,\"start\":\"2026-11-01\",\"fteBps\":10000,\"status\":\"accepted\",\"updated\":\"2026-10-25\"},{\"id\":\"ATS-404\",\"positionId\":\"POS-999\",\"personKey\":\"SYN-04\",\"title\":\"Product designer\",\"annualCents\":10800000,\"start\":\"2026-11-09\",\"fteBps\":10000,\"status\":\"accepted\",\"updated\":\"2026-10-27\"},{\"id\":\"ATS-405\",\"positionId\":\"POS-105\",\"personKey\":\"SYN-05\",\"title\":\"Account executive\",\"annualCents\":13200000,\"start\":\"2026-11-01\",\"fteBps\":10000,\"status\":\"accepted\",\"updated\":\"2026-10-25\"}],\"hris\":[{\"id\":\"HRIS-201\",\"positionId\":\"POS-101\",\"personKey\":\"SYN-01\",\"title\":\"Backend engineer\",\"annualCents\":12000000,\"start\":\"2026-10-12\",\"fteBps\":10000,\"status\":\"active\",\"updated\":\"2026-10-27\"},{\"id\":\"HRIS-202\",\"positionId\":\"POS-102\",\"personKey\":\"SYN-02\",\"title\":\"Product engineer\",\"annualCents\":14400000,\"start\":\"2026-12-01\",\"fteBps\":10000,\"status\":\"preboarding\",\"updated\":\"2026-10-28\"}]}",
+        "recordedAt": "2026-10-27T19:11:44.949Z"
+      }
+    }
+  ],
+  "forecast": [
+    {
+      "month": "2026-11",
+      "rawTotalCents": 7232000,
+      "totalCents": 4032000,
+      "planTotalCents": 4280000,
+      "varianceCents": -248000,
+      "deltaCents": -3200000,
+      "bridge": [
+        {
+          "id": "join:POS-101",
+          "deltaCents": -1160000
+        },
+        {
+          "id": "join:POS-102",
+          "deltaCents": 0
+        },
+        {
+          "id": "freeze:POS-103",
+          "deltaCents": -960000
+        },
+        {
+          "id": "unmapped:ATS-404",
+          "deltaCents": -1080000
+        }
+      ],
+      "residualCents": 0,
+      "positions": [
+        {
+          "id": "HRIS-201",
+          "positionId": "POS-101",
+          "personKey": "SYN-01",
+          "title": "Backend engineer",
+          "annualCents": 12000000,
+          "start": "2026-10-12",
+          "fteBps": 10000,
+          "status": "active",
+          "updated": "2026-10-27",
+          "team": "Engineering",
+          "source": "HRIS",
+          "sourceId": "HRIS-201",
+          "positionState": "Linked record",
+          "activeDays": 30,
+          "days": 30,
+          "baseCents": 1000000,
+          "loadedCents": 1200000,
+          "fte": 1,
+          "plannedStart": "2026-11-02",
+          "planCostCents": 1160000,
+          "varianceToPlanCents": 40000
+        },
+        {
+          "id": "ATS-402",
+          "positionId": "POS-102",
+          "personKey": "SYN-02",
+          "title": "Product engineer",
+          "annualCents": 14400000,
+          "start": "2026-11-16",
+          "fteBps": 10000,
+          "status": "accepted",
+          "updated": "2026-10-26",
+          "team": "Engineering",
+          "source": "ATS",
+          "sourceId": "ATS-402",
+          "positionState": "Linked record",
+          "activeDays": 15,
+          "days": 30,
+          "baseCents": 600000,
+          "loadedCents": 720000,
+          "fte": 1,
+          "plannedStart": "2026-11-16",
+          "planCostCents": 720000,
+          "varianceToPlanCents": 0
+        },
+        {
+          "id": "ATS-404",
+          "positionId": "POS-104",
+          "personKey": "SYN-04",
+          "title": "Product designer",
+          "annualCents": 10800000,
+          "start": "2026-11-09",
+          "fteBps": 10000,
+          "status": "accepted",
+          "updated": "2026-10-27",
+          "team": "Design",
+          "source": "ATS",
+          "sourceId": "ATS-404",
+          "positionState": "Operator-linked offer",
+          "activeDays": 22,
+          "days": 30,
+          "baseCents": 660000,
+          "loadedCents": 792000,
+          "fte": 1,
+          "plannedStart": "2026-11-01",
+          "planCostCents": 1080000,
+          "varianceToPlanCents": -288000
+        },
+        {
+          "id": "ATS-405",
+          "positionId": "POS-105",
+          "personKey": "SYN-05",
+          "title": "Account executive",
+          "annualCents": 13200000,
+          "start": "2026-11-01",
+          "fteBps": 10000,
+          "status": "accepted",
+          "updated": "2026-10-25",
+          "team": "Sales",
+          "source": "ATS",
+          "sourceId": "ATS-405",
+          "positionState": "Linked record",
+          "activeDays": 30,
+          "days": 30,
+          "baseCents": 1100000,
+          "loadedCents": 1320000,
+          "fte": 1,
+          "plannedStart": "2026-11-01",
+          "planCostCents": 1320000,
+          "varianceToPlanCents": 0
+        },
+        {
+          "id": "POS-106",
+          "title": "Platform engineer",
+          "team": "Engineering",
+          "annualCents": 15600000,
+          "start": "2026-12-01",
+          "fteBps": 10000,
+          "state": "approved",
+          "positionId": "POS-106",
+          "source": "Plan",
+          "sourceId": "POS-106",
+          "positionState": "Planned vacancy",
+          "activeDays": 0,
+          "days": 30,
+          "baseCents": 0,
+          "loadedCents": 0,
+          "fte": 0,
+          "plannedStart": "2026-12-01",
+          "planCostCents": 0,
+          "varianceToPlanCents": 0
+        }
+      ]
+    },
+    {
+      "month": "2026-12",
+      "rawTotalCents": 11280000,
+      "totalCents": 6600000,
+      "planTotalCents": 6600000,
+      "varianceCents": 0,
+      "deltaCents": -4680000,
+      "bridge": [
+        {
+          "id": "join:POS-101",
+          "deltaCents": -1200000
+        },
+        {
+          "id": "join:POS-102",
+          "deltaCents": -1440000
+        },
+        {
+          "id": "freeze:POS-103",
+          "deltaCents": -960000
+        },
+        {
+          "id": "unmapped:ATS-404",
+          "deltaCents": -1080000
+        }
+      ],
+      "residualCents": 0,
+      "positions": [
+        {
+          "id": "HRIS-201",
+          "positionId": "POS-101",
+          "personKey": "SYN-01",
+          "title": "Backend engineer",
+          "annualCents": 12000000,
+          "start": "2026-10-12",
+          "fteBps": 10000,
+          "status": "active",
+          "updated": "2026-10-27",
+          "team": "Engineering",
+          "source": "HRIS",
+          "sourceId": "HRIS-201",
+          "positionState": "Linked record",
+          "activeDays": 31,
+          "days": 31,
+          "baseCents": 1000000,
+          "loadedCents": 1200000,
+          "fte": 1,
+          "plannedStart": "2026-11-02",
+          "planCostCents": 1200000,
+          "varianceToPlanCents": 0
+        },
+        {
+          "id": "ATS-402",
+          "positionId": "POS-102",
+          "personKey": "SYN-02",
+          "title": "Product engineer",
+          "annualCents": 14400000,
+          "start": "2026-11-16",
+          "fteBps": 10000,
+          "status": "accepted",
+          "updated": "2026-10-26",
+          "team": "Engineering",
+          "source": "ATS",
+          "sourceId": "ATS-402",
+          "positionState": "Linked record",
+          "activeDays": 31,
+          "days": 31,
+          "baseCents": 1200000,
+          "loadedCents": 1440000,
+          "fte": 1,
+          "plannedStart": "2026-11-16",
+          "planCostCents": 1440000,
+          "varianceToPlanCents": 0
+        },
+        {
+          "id": "ATS-404",
+          "positionId": "POS-104",
+          "personKey": "SYN-04",
+          "title": "Product designer",
+          "annualCents": 10800000,
+          "start": "2026-11-09",
+          "fteBps": 10000,
+          "status": "accepted",
+          "updated": "2026-10-27",
+          "team": "Design",
+          "source": "ATS",
+          "sourceId": "ATS-404",
+          "positionState": "Operator-linked offer",
+          "activeDays": 31,
+          "days": 31,
+          "baseCents": 900000,
+          "loadedCents": 1080000,
+          "fte": 1,
+          "plannedStart": "2026-11-01",
+          "planCostCents": 1080000,
+          "varianceToPlanCents": 0
+        },
+        {
+          "id": "ATS-405",
+          "positionId": "POS-105",
+          "personKey": "SYN-05",
+          "title": "Account executive",
+          "annualCents": 13200000,
+          "start": "2026-11-01",
+          "fteBps": 10000,
+          "status": "accepted",
+          "updated": "2026-10-25",
+          "team": "Sales",
+          "source": "ATS",
+          "sourceId": "ATS-405",
+          "positionState": "Linked record",
+          "activeDays": 31,
+          "days": 31,
+          "baseCents": 1100000,
+          "loadedCents": 1320000,
+          "fte": 1,
+          "plannedStart": "2026-11-01",
+          "planCostCents": 1320000,
+          "varianceToPlanCents": 0
+        },
+        {
+          "id": "POS-106",
+          "title": "Platform engineer",
+          "team": "Engineering",
+          "annualCents": 15600000,
+          "start": "2026-12-01",
+          "fteBps": 10000,
+          "state": "approved",
+          "positionId": "POS-106",
+          "source": "Plan",
+          "sourceId": "POS-106",
+          "positionState": "Planned vacancy",
+          "activeDays": 31,
+          "days": 31,
+          "baseCents": 1300000,
+          "loadedCents": 1560000,
+          "fte": 1,
+          "plannedStart": "2026-12-01",
+          "planCostCents": 1560000,
+          "varianceToPlanCents": 0
+        }
+      ]
+    },
+    {
+      "month": "2027-01",
+      "rawTotalCents": 11280000,
+      "totalCents": 6600000,
+      "planTotalCents": 6600000,
+      "varianceCents": 0,
+      "deltaCents": -4680000,
+      "bridge": [
+        {
+          "id": "join:POS-101",
+          "deltaCents": -1200000
+        },
+        {
+          "id": "join:POS-102",
+          "deltaCents": -1440000
+        },
+        {
+          "id": "freeze:POS-103",
+          "deltaCents": -960000
+        },
+        {
+          "id": "unmapped:ATS-404",
+          "deltaCents": -1080000
+        }
+      ],
+      "residualCents": 0,
+      "positions": [
+        {
+          "id": "HRIS-201",
+          "positionId": "POS-101",
+          "personKey": "SYN-01",
+          "title": "Backend engineer",
+          "annualCents": 12000000,
+          "start": "2026-10-12",
+          "fteBps": 10000,
+          "status": "active",
+          "updated": "2026-10-27",
+          "team": "Engineering",
+          "source": "HRIS",
+          "sourceId": "HRIS-201",
+          "positionState": "Linked record",
+          "activeDays": 31,
+          "days": 31,
+          "baseCents": 1000000,
+          "loadedCents": 1200000,
+          "fte": 1,
+          "plannedStart": "2026-11-02",
+          "planCostCents": 1200000,
+          "varianceToPlanCents": 0
+        },
+        {
+          "id": "ATS-402",
+          "positionId": "POS-102",
+          "personKey": "SYN-02",
+          "title": "Product engineer",
+          "annualCents": 14400000,
+          "start": "2026-11-16",
+          "fteBps": 10000,
+          "status": "accepted",
+          "updated": "2026-10-26",
+          "team": "Engineering",
+          "source": "ATS",
+          "sourceId": "ATS-402",
+          "positionState": "Linked record",
+          "activeDays": 31,
+          "days": 31,
+          "baseCents": 1200000,
+          "loadedCents": 1440000,
+          "fte": 1,
+          "plannedStart": "2026-11-16",
+          "planCostCents": 1440000,
+          "varianceToPlanCents": 0
+        },
+        {
+          "id": "ATS-404",
+          "positionId": "POS-104",
+          "personKey": "SYN-04",
+          "title": "Product designer",
+          "annualCents": 10800000,
+          "start": "2026-11-09",
+          "fteBps": 10000,
+          "status": "accepted",
+          "updated": "2026-10-27",
+          "team": "Design",
+          "source": "ATS",
+          "sourceId": "ATS-404",
+          "positionState": "Operator-linked offer",
+          "activeDays": 31,
+          "days": 31,
+          "baseCents": 900000,
+          "loadedCents": 1080000,
+          "fte": 1,
+          "plannedStart": "2026-11-01",
+          "planCostCents": 1080000,
+          "varianceToPlanCents": 0
+        },
+        {
+          "id": "ATS-405",
+          "positionId": "POS-105",
+          "personKey": "SYN-05",
+          "title": "Account executive",
+          "annualCents": 13200000,
+          "start": "2026-11-01",
+          "fteBps": 10000,
+          "status": "accepted",
+          "updated": "2026-10-25",
+          "team": "Sales",
+          "source": "ATS",
+          "sourceId": "ATS-405",
+          "positionState": "Linked record",
+          "activeDays": 31,
+          "days": 31,
+          "baseCents": 1100000,
+          "loadedCents": 1320000,
+          "fte": 1,
+          "plannedStart": "2026-11-01",
+          "planCostCents": 1320000,
+          "varianceToPlanCents": 0
+        },
+        {
+          "id": "POS-106",
+          "title": "Platform engineer",
+          "team": "Engineering",
+          "annualCents": 15600000,
+          "start": "2026-12-01",
+          "fteBps": 10000,
+          "state": "approved",
+          "positionId": "POS-106",
+          "source": "Plan",
+          "sourceId": "POS-106",
+          "positionState": "Planned vacancy",
+          "activeDays": 31,
+          "days": 31,
+          "baseCents": 1300000,
+          "loadedCents": 1560000,
+          "fte": 1,
+          "plannedStart": "2026-12-01",
+          "planCostCents": 1560000,
+          "varianceToPlanCents": 0
+        }
+      ]
+    }
+  ]
+}

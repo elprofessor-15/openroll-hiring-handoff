@@ -1,0 +1,142 @@
+{
+  "asOf": "2026-10-28",
+  "workspace": "Northstar Labs",
+  "currency": "USD",
+  "plan": [
+    {
+      "id": "POS-101",
+      "title": "Backend engineer",
+      "team": "Engineering",
+      "annualCents": 12000000,
+      "start": "2026-11-02",
+      "fteBps": 10000,
+      "state": "approved"
+    },
+    {
+      "id": "POS-102",
+      "title": "Product engineer",
+      "team": "Engineering",
+      "annualCents": 14400000,
+      "start": "2026-11-16",
+      "fteBps": 10000,
+      "state": "approved"
+    },
+    {
+      "id": "POS-103",
+      "title": "Support lead",
+      "team": "Customer experience",
+      "annualCents": 9600000,
+      "start": "2026-11-01",
+      "fteBps": 10000,
+      "state": "frozen"
+    },
+    {
+      "id": "POS-104",
+      "title": "Product designer",
+      "team": "Design",
+      "annualCents": 10800000,
+      "start": "2026-11-01",
+      "fteBps": 10000,
+      "state": "approved"
+    },
+    {
+      "id": "POS-105",
+      "title": "Account executive",
+      "team": "Sales",
+      "annualCents": 13200000,
+      "start": "2026-11-01",
+      "fteBps": 10000,
+      "state": "approved"
+    },
+    {
+      "id": "POS-106",
+      "title": "Platform engineer",
+      "team": "Engineering",
+      "annualCents": 15600000,
+      "start": "2026-12-01",
+      "fteBps": 10000,
+      "state": "approved"
+    }
+  ],
+  "ats": [
+    {
+      "id": "ATS-401",
+      "positionId": "POS-101",
+      "personKey": "SYN-01",
+      "title": "Backend engineer",
+      "annualCents": 12000000,
+      "start": "2026-11-02",
+      "fteBps": 10000,
+      "status": "accepted",
+      "updated": "2026-10-24"
+    },
+    {
+      "id": "ATS-402",
+      "positionId": "POS-102",
+      "personKey": "SYN-02",
+      "title": "Product engineer",
+      "annualCents": 14400000,
+      "start": "2026-11-16",
+      "fteBps": 10000,
+      "status": "accepted",
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "ATS-403",
+      "positionId": "POS-103",
+      "personKey": "SYN-03",
+      "title": "Support lead",
+      "annualCents": 9600000,
+      "start": "2026-11-01",
+      "fteBps": 10000,
+      "status": "accepted",
+      "updated": "2026-10-25"
+    },
+    {
+      "id": "ATS-404",
+      "positionId": "POS-999",
+      "personKey": "SYN-04",
+      "title": "Product designer",
+      "annualCents": 10800000,
+      "start": "2026-11-09",
+      "fteBps": 10000,
+      "status": "accepted",
+      "updated": "2026-10-27"
+    },
+    {
+      "id": "ATS-405",
+      "positionId": "POS-105",
+      "personKey": "SYN-05",
+      "title": "Account executive",
+      "annualCents": 13200000,
+      "start": "2026-11-01",
+      "fteBps": 10000,
+      "status": "accepted",
+      "updated": "2026-10-25"
+    }
+  ],
+  "hris": [
+    {
+      "id": "HRIS-201",
+      "positionId": "POS-101",
+      "personKey": "SYN-01",
+      "title": "Backend engineer",
+      "annualCents": 12000000,
+      "start": "2026-10-12",
+      "fteBps": 10000,
+      "status": "active",
+      "updated": "2026-10-27"
+    },
+    {
+      "id": "HRIS-202",
+      "positionId": "POS-102",
+      "personKey": "SYN-02",
+      "title": "Product engineer",
+      "annualCents": 14400000,
+      "start": "2026-12-01",
+      "fteBps": 10000,
+      "status": "preboarding",
+      "updated": "2026-10-28"
+    }
+  ]
+}
